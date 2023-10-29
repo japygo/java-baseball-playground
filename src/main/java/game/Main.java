@@ -18,5 +18,7 @@ public class Main {
             resultView.result(result);
             isCorrect = result.getStrike() == 3;
         }
+
+        resultView.correctAnswer();
     }
 }
