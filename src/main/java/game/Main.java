@@ -1,10 +1,20 @@
 package game;
 
 public class Main {
-    public static void main(String[] args) {
-        InputView inputView = new InputView();
-        ResultView resultView = new ResultView();
+    public static final InputView inputView = new InputView();
+    public static final ResultView resultView = new ResultView();
 
+    public static void main(String[] args) {
+
+        boolean isExit = false;
+        while (!isExit) {
+            playGame();
+
+            isExit = inputView.exitGame();
+        }
+    }
+
+    public static void playGame() {
         NumberBaseballNumber numberBaseballNumber = new NumberBaseballNumber();
         Integer[] question = numberBaseballNumber.getNumbers();
 

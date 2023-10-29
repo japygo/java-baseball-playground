@@ -10,4 +10,13 @@ public class InputView {
         System.out.print("숫자를 입력해 주세요 : ");
         return scanner.nextInt();
     }
+
+    public boolean exitGame() {
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        int number = scanner.nextInt();
+        if (number != 1 && number != 2) {
+            exitGame();
+        }
+        return number == 2;
+    }
 }
