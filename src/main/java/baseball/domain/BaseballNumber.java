@@ -17,4 +17,19 @@ public class BaseballNumber {
     public int getNumber() {
         return this.number;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        BaseballNumber number1 = (BaseballNumber) o;
+
+        return number == number1.number;
+    }
+
+    @Override
+    public int hashCode() {
+        return number;
+    }
 }
