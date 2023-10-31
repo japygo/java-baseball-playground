@@ -33,4 +33,8 @@ public class BaseballResult {
     public int getBall() {
         return ball;
     }
+
+    public boolean isEnd() {
+        return this.strike == 3;
+    }
 }

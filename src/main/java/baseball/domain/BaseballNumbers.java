@@ -32,6 +32,10 @@ public class BaseballNumbers {
         return this.numbers;
     }
 
+    public BaseballResult compare(BaseballNumbers numbers) {
+        return compare(numbers.getNumbers());
+    }
+
     public BaseballResult compare(List<BaseballNumber> numberList) {
         BaseballResult baseballResult = new BaseballResult();
         for (int index = 0; index < SIZE; index++) {

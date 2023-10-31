@@ -1,7 +1,17 @@
 package baseball.domain;
 
 public enum BaseballStatus {
-    BALL, NOTHING, STRIKE;
+    BALL("볼"), NOTHING("낫싱"), STRIKE("스트라이크");
+
+    private final String label;
+
+    BaseballStatus(String label) {
+        this.label = label;
+    }
+
+    public String getLabel() {
+        return this.label;
+    }
 
     public boolean isStrike() {
         return this == STRIKE;
