@@ -20,5 +20,6 @@ public class BaseballMain {
             result = question.compare(answer);
             resultView.view(result);
         }
+        resultView.end();
     }
 }
