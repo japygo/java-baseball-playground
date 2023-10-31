@@ -7,19 +7,27 @@ import baseball.view.InputView;
 import baseball.view.ResultView;
 
 public class BaseballMain {
+    private static final InputView inputView = new InputView();
+    private static final ResultView resultView = new ResultView();
+    private static final Baseball baseball = new Baseball();
+
     public static void main(String[] args) {
-        Baseball baseball = new Baseball();
-        InputView inputView = new InputView();
-        ResultView resultView = new ResultView();
+        do {
+            start(baseball.generateBaseballNumbers());
+        } while (isRestart());
+    }
+
+    public static void start(BaseballNumbers question) {
         BaseballResult result = new BaseballResult();
-
-        BaseballNumbers question = baseball.generateBaseballNumbers();
-
         while (!result.isEnd()) {
             BaseballNumbers answer = inputView.input();
             result = question.compare(answer);
             resultView.view(result);
         }
         resultView.end();
+    }
+
+    public static boolean isRestart() {
+        return inputView.restart() == 1;
     }
 }
